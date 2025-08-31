@@ -1,3 +1,5 @@
+import ReviewSection from "./ReviewSection";
+
 interface Property {
   id: number;
   title: string;
@@ -23,6 +25,9 @@ export default function PropertyDetail({ property }: Props) {
       <p className="text-gray-500">{property.location}</p>
       <p className="mt-4">{property.description}</p>
       <p className="text-blue-600 font-semibold mt-2">${property.price}/night</p>
+
+      {/* Add Reviews */}
+      <ReviewSection propertyId={property.id} />
     </div>
   );
 }
